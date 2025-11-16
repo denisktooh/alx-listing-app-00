@@ -1,3 +1,5 @@
+import { Url } from "next/dist/shared/lib/router/router";
+
 export interface CardProps {
   title: string;
   subtitle?: string;
@@ -12,4 +14,27 @@ export interface ButtonProps {
   type?: "button" | "submit" | "reset";
   className?: string;
   disabled?: boolean;
+}
+
+interface Address {
+  state: string;
+  city: string;
+  country: string;
+}
+
+interface Offers {
+  bed: string;
+  shower: string;
+  occupants: string;
+}
+
+export interface PropertyProps {
+  name: string;
+  address: Address;
+  rating: number;
+  category: string[];
+  price: number;
+  offers: Offers;
+  image: Url;
+  discount: string;
 }
